@@ -19,3 +19,12 @@ var libraries = [
     { name: 'Koa', url: 'http://koajs.com/'},
 ];
 
+var Item = (props) => <div><a href={props.url}>{props.key} </a></div>
+
+var ItemList = function(props) { 
+    var items = props.items.map(function(i) {return <Item key={i.name} url={i.url} />; } );
+    debugger; 
+    return <div>{items}</div>; 
+}
+
+ReactDOM.render(<ItemList items={libraries} />, document.getElementById('r'))
